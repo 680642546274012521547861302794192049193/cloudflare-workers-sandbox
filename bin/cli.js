@@ -87,7 +87,7 @@ vm.runInContext(worker, sandbox);
 var http = require('http');
 var morgan = require('morgan');
 var logger = morgan('dev');
-var port = 3000;
+var port = 80;
 var server = http.createServer(function(req, res) {
     // req.url is a binary string so convert to a utf8 string
     req.url = Buffer.from(req.url, 'binary').toString('utf8');
@@ -96,7 +96,7 @@ var server = http.createServer(function(req, res) {
     })
 });
 server.on('listening', () => console.log(`Cloudflare Workers Sandbox: ready on port ${port}`));
-server.listen(port);
+server.listen(port, "0.0.0.0");
 
 function handler(req, res) {
 
