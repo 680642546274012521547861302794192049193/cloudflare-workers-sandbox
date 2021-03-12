@@ -96,7 +96,7 @@ var server = http.createServer(function(req, res) {
     })
 });
 server.on('listening', () => console.log(`Cloudflare Workers Sandbox: ready on port ${port}`));
-server.listen(port, "0.0.0.0");
+server.listen(port);
 
 function handler(req, res) {
 
